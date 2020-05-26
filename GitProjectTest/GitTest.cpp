@@ -32,7 +32,7 @@ int main()
 			s.push_back(v.substr(j, i));
 			j = i;
 		}
-
+		
 	}
 	
 }
