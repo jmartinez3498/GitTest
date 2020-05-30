@@ -23,14 +23,56 @@ int main()
 		}
 	} 
 
-	//weird nothing changed
-	//lets try again
-	//maybe it's because I didn't commit before I changed brances
-	//Actually its because I tried stashing the changes
+	//Now we are going to compare each word
 
+	std::string longest_common_word = s[0];
+	int word_length = longest_common_word.length();
+
+	//for loop that goes through each word in the vector
 	for (int i = 0; i < s.size(); ++i)
 	{
 		std::cout << s[i] << std::endl;
+
+		//how do we compare longest word to words in vector
+		//first we need to see which word is longer
+		bool vector_word_longer = false;
+		bool vector_word_shorter = false;
+		bool vector_word_same = false;
+
+		if (s[i].length() > longest_common_word.length())
+			vector_word_longer = true;
+		else if (longest_common_word.length() > s[i].length())
+			vector_word_shorter = true;
+		else
+			vector_word_same = true;
+		std::vector <std::string> longest_words;
+
+		//for loop that goes through each letter in a word
+		for (int j = 0; j < s[i].length(); ++j)
+		{
+			std::cout << s[i][j];
+			if (vector_word_same)
+			{
+				//checks if letters are the same
+				if (s[i][j] == longest_common_word[j])
+				{
+					//check the next letter in the word to see if it matches
+					//if not, add this to a vector or strings
+					//what if we have a for loop for smallest word?
+					//won't work after trying and thinking about it
+					//think I will have to iterate through each letter in the longest word multiple times
+					for (int k = 0; k < 1; ++k)
+					{
+
+					}
+					std::string f = s[i].substr(j, j);
+					longest_words.push_back(f);
+				}
+				//f holds that letter
+			}
+
+		}
+		std::cout << std::endl;
 	}
-	
+	std::cout << longest_common_word;
 }
