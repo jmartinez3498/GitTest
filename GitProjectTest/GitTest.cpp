@@ -25,23 +25,23 @@ int main()
 
 	//Now we are going to compare each word
 
-	std::string smallest_common_word = s[0];
-	int word_length = smallest_common_word.length();
+	std::string longest_common_word = s[0];
+	int word_length = longest_common_word.length();
 
 	//for loop that goes through each word in the vector
 	for (int i = 0; i < s.size(); ++i)
 	{
 		std::cout << s[i] << std::endl;
 
-		//how do we compare smallest word to words in vector
+		//how do we compare longest word to words in vector
 		//first we need to see which word is longer
 		bool vector_word_longer = false;
 		bool vector_word_shorter = false;
 		bool vector_word_same = false;
 
-		if (s[i].length() > smallest_common_word.length())
+		if (s[i].length() > longest_common_word.length())
 			vector_word_longer = true;
-		else if (smallest_common_word.length() > s[i].length())
+		else if (longest_common_word.length() > s[i].length())
 			vector_word_shorter = true;
 		else
 			vector_word_same = true;
@@ -54,13 +54,13 @@ int main()
 			if (vector_word_same)
 			{
 				//checks if letters are the same
-				if (s[i][j] == smallest_common_word[j])
+				if (s[i][j] == longest_common_word[j])
 				{
 					//check the next letter in the word to see if it matches
 					//if not, add this to a vector or strings
 					//what if we have a for loop for smallest word?
-					//we iterate through each letter, then compare to each letter in word vector while changing after each iteration of word
-					//might take a little more work, but I think its easier to code
+					//won't work after trying and thinking about it
+					//think I will have to iterate through each letter in the longest word multiple times
 					for (int k = 0; k < 1; ++k)
 					{
 
@@ -74,5 +74,5 @@ int main()
 		}
 		std::cout << std::endl;
 	}
-	std::cout << smallest_common_word;
+	std::cout << longest_common_word;
 }
